@@ -57,6 +57,7 @@ class ProductsController extends Controller
                 $html[] = '<option value=' . $datum->id . '>' . $datum->name . '</option>';
             }
         } catch (\Exception $e) {
+            session()->flash('flash_message_success', trans('auth.error_occurred'));
             return ['error' => $e];
         }
         return ['success' => true, 'html' => $html];
@@ -74,6 +75,7 @@ class ProductsController extends Controller
         if($request->image)
             $data['image'] = $request->image->store('products');
         Product::create($data);
+        session()->flash('flash_message_success', trans('auth.save_success'));
         return redirect('/products');
     }
 
@@ -122,6 +124,7 @@ class ProductsController extends Controller
         if($request->image)
             $data['image'] = $request->image->store('products');
         $product->update($data);
+        session()->flash('flash_message_success', trans('auth.save_success'));
         return redirect('/products');
     }
 

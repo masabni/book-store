@@ -44,8 +44,12 @@
                                         </thead>
                                         <tfoot>
                                         <tr>
-                                            <th colspan="6">Showing {{$products->firstItem()}}
-                                                to {{$products->lastItem()}} of {{$products->total()}} entries
+                                            <th colspan="6">
+                                                Showing
+                                                @if($products->total())
+                                                {{$products->firstItem()}} to {{$products->lastItem()}} of
+                                                @endif
+                                                {{$products->total()}} entries
                                             </th>
                                             <th colspan="8">{{$products->links()}}</th>
                                         </tr>
@@ -89,8 +93,8 @@
                                             </tr>
                                         @empty
                                             <tr>
-                                                <td valign="top" colspan="10" class="dataTables_empty">No matching
-                                                    records found
+                                                <td valign="top" colspan="13">
+                                                    No matching records found
                                                 </td>
                                             </tr>
                                         @endforelse

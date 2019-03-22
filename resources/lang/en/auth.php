@@ -15,5 +15,6 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-
+    'save_success' => 'Saved Successfully',
+    'error_occurred' => 'There\'s an error occurred, please try again',
 ];

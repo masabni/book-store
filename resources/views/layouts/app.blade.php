@@ -36,5 +36,6 @@
 <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
 <!-- end of global scripts-->
 @yield('js')
+@include('partials.flash')
 </body>
 </html>
