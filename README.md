@@ -32,19 +32,25 @@
     
     Now edit the *.env* file and change the DB variables
     
-5. Run migrations & seeders:
+5. Generate app key:
+
+    ```
+    php artisan key:generate
+    ```
+    
+6. Run migrations & seeders:
 
     ```
     php artisan migrate --seed
     ```
     
-6. Create link to the storage dir:
+7. Create link to the storage dir:
 
     ```
     php artisan storage:link
     ```
     
-7. Start project
+8. Start project
 
     ```
     php artisan serve
